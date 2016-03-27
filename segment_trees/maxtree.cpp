@@ -12,7 +12,7 @@ public:
         for (t[p += n] = value; p > 1; p >>= 1) t[p>>1] = max(t[p], t[p^1]);
     }
 
-    int query(int l, int r) {  // sum on interval [l, r)
+    int query(int l, int r) {  // max on interval [l, r)
         int res = 0;
         for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
             if (l&1) res = max(res, t[l++]);
